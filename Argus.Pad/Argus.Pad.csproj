@@ -106,6 +106,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\DetectionView.xaml.cs">
+      <DependentUpon>DetectionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,89 @@
     <None Include="Argus.Pad_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Background.png" />
+    <Content Include="Assets\Bar.png" />
+    <Content Include="Assets\Icon\Bar_Logo.png" />
+    <Content Include="Assets\Icon\Bar_Result.png" />
+    <Content Include="Assets\Icon\BlueSpot.png" />
+    <Content Include="Assets\Icon\ClockBackground.png" />
+    <Content Include="Assets\Icon\Detection.png" />
+    <Content Include="Assets\Icon\Editor.png" />
+    <Content Include="Assets\Icon\Option.png" />
+    <Content Include="Assets\Icon\PreDection.png" />
+    <Content Include="Assets\Icon\Printer.png" />
+    <Content Include="Assets\Icon\Query.png" />
+    <Content Include="Assets\Icon\RedSpot.png" />
+    <Content Include="Assets\Icon\YellowMemo.png" />
+    <Content Include="Assets\logo.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StartAnimation\001.png" />
+    <Content Include="Assets\StartAnimation\002.png" />
+    <Content Include="Assets\StartAnimation\003.png" />
+    <Content Include="Assets\StartAnimation\004.png" />
+    <Content Include="Assets\StartAnimation\005.png" />
+    <Content Include="Assets\StartAnimation\006.png" />
+    <Content Include="Assets\StartAnimation\007.png" />
+    <Content Include="Assets\StartAnimation\008.png" />
+    <Content Include="Assets\StartAnimation\009.png" />
+    <Content Include="Assets\StartAnimation\010.png" />
+    <Content Include="Assets\StartAnimation\011.png" />
+    <Content Include="Assets\StartAnimation\012.png" />
+    <Content Include="Assets\StartAnimation\013.png" />
+    <Content Include="Assets\StartAnimation\014.png" />
+    <Content Include="Assets\StartAnimation\015.png" />
+    <Content Include="Assets\StartAnimation\016.png" />
+    <Content Include="Assets\StartAnimation\017.png" />
+    <Content Include="Assets\StartAnimation\018.png" />
+    <Content Include="Assets\StartAnimation\019.png" />
+    <Content Include="Assets\StartAnimation\020.png" />
+    <Content Include="Assets\StartAnimation\021.png" />
+    <Content Include="Assets\StartAnimation\022.png" />
+    <Content Include="Assets\StartAnimation\023.png" />
+    <Content Include="Assets\StartAnimation\024.png" />
+    <Content Include="Assets\StartAnimation\025.png" />
+    <Content Include="Assets\StartAnimation\026.png" />
+    <Content Include="Assets\StartAnimation\027.png" />
+    <Content Include="Assets\StartAnimation\028.png" />
+    <Content Include="Assets\StartAnimation\029.png" />
+    <Content Include="Assets\StartAnimation\030.png" />
+    <Content Include="Assets\StartAnimation\031.png" />
+    <Content Include="Assets\StartAnimation\032.png" />
+    <Content Include="Assets\StartAnimation\033.png" />
+    <Content Include="Assets\StartAnimation\034.png" />
+    <Content Include="Assets\StartAnimation\035.png" />
+    <Content Include="Assets\StartAnimation\036.png" />
+    <Content Include="Assets\StartAnimation\037.png" />
+    <Content Include="Assets\StartAnimation\038.png" />
+    <Content Include="Assets\StartAnimation\039.png" />
+    <Content Include="Assets\StartAnimation\040.png" />
+    <Content Include="Assets\StartAnimation\041.png" />
+    <Content Include="Assets\StartAnimation\042.png" />
+    <Content Include="Assets\StartAnimation\043.png" />
+    <Content Include="Assets\StartAnimation\044.png" />
+    <Content Include="Assets\StartAnimation\045.png" />
+    <Content Include="Assets\StartAnimation\046.png" />
+    <Content Include="Assets\StartAnimation\047.png" />
+    <Content Include="Assets\StartAnimation\048.png" />
+    <Content Include="Assets\StartAnimation\049.png" />
+    <Content Include="Assets\StartAnimation\050.png" />
+    <Content Include="Assets\StartAnimation\051.png" />
+    <Content Include="Assets\StartAnimation\052.png" />
+    <Content Include="Assets\StartAnimation\053.png" />
+    <Content Include="Assets\StartAnimation\054.png" />
+    <Content Include="Assets\StartAnimation\055.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -135,6 +221,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DetectionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
