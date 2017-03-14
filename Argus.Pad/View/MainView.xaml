@@ -38,19 +38,13 @@
                         </EventTrigger>
                     </Border.Triggers>
                 </Border>
-                <Border Background="Gray" >
-
-                </Border>
-                <Border Background="LightCoral" Grid.Row="2" >
-
-                </Border>
-                <Border Background="LightBlue" Grid.Column="2">
-
-                </Border>
-                <Border Background="Purple" Grid.Row="2"  Grid.Column="2"  ></Border>
+                <Frame x:Name="LeftUpFrame" ></Frame>
+                <Frame x:Name="RightUpFrame" Grid.Column="2"></Frame>
+                <Frame x:Name="LeftBottonFrame" Grid.Row="2"></Frame>
+                <Frame x:Name="RightBottonFrame"  Grid.Row="2"  Grid.Column="2"></Frame>
 
             </Grid>
-            <Border x:Name="BigBorder"  Height="30" Width="30" CornerRadius="30" Background="Black"   PointerPressed="border_PointerPressed" Canvas.Left="305" Canvas.Top="168"  />
+            <Border x:Name="BigBorder"  Height="50" Width="50" CornerRadius="30" Background="Black"   PointerPressed="border_PointerPressed" Canvas.Left="305" Canvas.Top="168"  />
         </Canvas>
     </Grid>
 </local:BasePage>

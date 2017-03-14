@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Height="48" VerticalAlignment="Top" Background="White">
+        <Grid Height="50" VerticalAlignment="Top" Background="White">
             <Button x:Name="hamburgerButton" Background="Transparent" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Click="SplitViewToggle_Click">
                 <TextBlock Text="&#xE700;" FontFamily="{ThemeResource SymbolThemeFontFamily}"/>
             </Button>

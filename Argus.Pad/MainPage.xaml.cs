@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Argus.Pad.View;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,15 +27,18 @@ namespace Argus.Pad
     {
         public List<NavLink> NavLinks = new List<NavLink>()
         {
-            new NavLink() { Label = "Page1", LinkType = typeof(MainView) },
-            new NavLink() { Label = "Page2", LinkType = typeof(MainView) }
+            new NavLink() { Label = "主页", LinkType = typeof(MainView) },
+            new NavLink() { Label = "设置", LinkType = typeof(SettingView) },
+            new NavLink() { Label = "查询", LinkType = typeof(QueryView) }
         };
         private static MainPage _instance = null;
         public MainPage()
         {
             this.InitializeComponent();
+            Window.Current.SetTitleBar(null);
             _instance = this;
             SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
+            //ApplicationView.GetForCurrentView().TryEnterFullScreenMode();
         }
         //右划后退
         public static void BackRequest()
@@ -79,5 +84,5 @@ namespace Argus.Pad
             base.OnNavigatedTo(e);
         }
     }
-   
+
 }

@@ -6,11 +6,42 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid >
+    <Grid x:Name="grid">
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="Assets/Background.png"/>
-            <!--<ImageBrush Stretch="Fill" ImageSource="Assets/1 主界面.jpg"/>-->
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Background.png"/>
         </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border  HorizontalAlignment="Stretch" Height="40" CornerRadius="20"  Margin="10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#A9C2CA" Offset="0.9"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border BorderThickness="0" HorizontalAlignment="Left"  Height="37" VerticalAlignment="Center"  Grid.Row="0" Width="146">
+                <Border.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Icon/Bar_Logo_mini.png"  />
+                </Border.Background>
+
+            </Border>
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" PointerPressed="StackPanel_PointerPressed">
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" Background="White" CornerRadius="10">
+                    <Image Width="268" Height="140" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="ms-appx:///Assets/Icon/Detection.png"  />
+                    <TextBlock FontSize="30" HorizontalAlignment="Center">检 测</TextBlock>
+                </StackPanel>
+          
+        </StackPanel>
+        <Border Name="Cover" Grid.RowSpan="2" Opacity="0.5" Background="Gray" PointerPressed="Cover_PointerPressed">
+            <Border Width="100" Height="100"  >
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Icon/expand_3.png"/>
+            </Border.Background>
+            </Border>
+        </Border>
+      
     </Grid>
 </Page>

@@ -99,6 +99,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\LayoutEnum.cs" />
     <Compile Include="Controls\BasePage.cs" />
     <Compile Include="Common\NavLind.cs" />
     <Compile Include="Controls\MyWrapPanel.cs" />
@@ -111,6 +112,9 @@
     </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QueryView.xaml.cs">
+      <DependentUpon>QueryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SettingView.xaml.cs">
       <DependentUpon>SettingView.xaml</DependentUpon>
@@ -126,11 +130,15 @@
     <Content Include="Assets\Background.png" />
     <Content Include="Assets\Bar.png" />
     <Content Include="Assets\Icon\Bar_Logo.png" />
+    <Content Include="Assets\Icon\Bar_Logo_mini.png" />
     <Content Include="Assets\Icon\Bar_Result.png" />
     <Content Include="Assets\Icon\BlueSpot.png" />
     <Content Include="Assets\Icon\ClockBackground.png" />
     <Content Include="Assets\Icon\Detection.png" />
     <Content Include="Assets\Icon\Editor.png" />
+    <Content Include="Assets\Icon\expand_1.png" />
+    <Content Include="Assets\Icon\expand_2.png" />
+    <Content Include="Assets\Icon\expand_3.png" />
     <Content Include="Assets\Icon\Option.png" />
     <Content Include="Assets\Icon\PreDection.png" />
     <Content Include="Assets\Icon\Printer.png" />
@@ -224,6 +232,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Style\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="View\DetectionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -232,12 +245,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\QueryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
