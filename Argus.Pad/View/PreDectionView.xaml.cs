@@ -1,7 +1,5 @@
-﻿using Argus.Pad.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,34 +20,21 @@ namespace Argus.Pad.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class DetectionView : Page, INotifyPropertyChanged
+    public  partial class PreDectionView : Page
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void RaisePropertyChanged(string propertyName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
         BaseLayoutView mainView;
-        public DetectionView()
+        public PreDectionView()
         {
             this.InitializeComponent();
-            this.DataContext = this;
-
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             mainView = (BaseLayoutView)e.Parameter;
         }
-
-        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        private void btnCloseDoor_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            mainView.NavigatedTo(typeof(PreDectionView));
+            mainView.NavigatedTo(typeof(DectionView));
         }
     }
-
 }

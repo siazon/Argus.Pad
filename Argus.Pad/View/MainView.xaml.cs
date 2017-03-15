@@ -39,13 +39,13 @@ namespace Argus.Pad
             Canvas.SetLeft(this.BigBorder, (ConCanvas.ActualWidth - this.BigBorder.ActualWidth) / 2);
             Canvas.SetTop(this.BigBorder, (ConCanvas.ActualHeight - this.BigBorder.ActualHeight) / 2);
             this.Layout = Layouts.LeftUp;
-            LeftUpFrame.Navigate(typeof(DetectionView), this);
+            LeftUpFrame.Navigate(typeof(BaseLayoutView), this);
             this.Layout = Layouts.LeftBottom;
-            LeftBottonFrame.Navigate(typeof(DetectionView), this);
+            LeftBottonFrame.Navigate(typeof(BaseLayoutView), this);
             this.Layout = Layouts.RightUp;
-            RightUpFrame.Navigate(typeof(DetectionView), this);
+            RightUpFrame.Navigate(typeof(BaseLayoutView), this);
             this.Layout = Layouts.RightBotton;
-            RightBottonFrame.Navigate(typeof(DetectionView), this);
+            RightBottonFrame.Navigate(typeof(BaseLayoutView), this);
             
         }
         PointerPoint p;
@@ -74,9 +74,9 @@ namespace Argus.Pad
                     width = MiniCorner + (BigBorder.ActualWidth / 2 - 10);
                 }
                 else if (left > Window.Current.Bounds.Width - MiniCorner)
-                {
-                    left = Window.Current.Bounds.Width - MiniCorner-5;
-                    width = Window.Current.Bounds.Width - MiniCorner + (BigBorder.ActualWidth / 2 - 10);
+                {//为了平整右和下都-40
+                    left = Window.Current.Bounds.Width - MiniCorner-5-40;
+                    width = Window.Current.Bounds.Width - MiniCorner + (BigBorder.ActualWidth / 2 - 10)-40;
                 }
                 if (top < MiniCorner)
                 {
@@ -84,9 +84,9 @@ namespace Argus.Pad
                     height = MiniCorner;
                 }
                 else if (top > Window.Current.Bounds.Height - MiniCorner-50)
-                {
-                    top = Window.Current.Bounds.Height - MiniCorner - 50;
-                    height = Window.Current.Bounds.Height - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10);
+                {//为了平整右和下都-40
+                    top = Window.Current.Bounds.Height - MiniCorner - 50-40;
+                    height = Window.Current.Bounds.Height - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10)-40;
                 }
                 this.grid.ColumnDefinitions[0].Width = new GridLength(width, GridUnitType.Pixel);
                 this.grid.RowDefinitions[0].Height = new GridLength(height, GridUnitType.Pixel);
@@ -103,23 +103,23 @@ namespace Argus.Pad
             double height = this.grid.RowDefinitions[0].Height.Value;
             switch (Layout)
             {
-                case Layouts.LeftUp:
-                    left = Window.Current.Bounds.Width - MiniCorner - 5;
-                    width = Window.Current.Bounds.Width - MiniCorner + (BigBorder.ActualWidth / 2 - 10);
-                    top = Window.Current.Bounds.Height - MiniCorner - 50;
-                    height = Window.Current.Bounds.Height - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10);
+                case Layouts.LeftUp://为了平整右和下都-40
+                    left = Window.Current.Bounds.Width - MiniCorner - 5-40;
+                    width = Window.Current.Bounds.Width - MiniCorner + (BigBorder.ActualWidth / 2 - 10)-40;
+                    top = Window.Current.Bounds.Height - MiniCorner - 50-40;
+                    height = Window.Current.Bounds.Height - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10)-40;
                     break;
                 case Layouts.LeftBottom:
-                    left = Window.Current.Bounds.Width - MiniCorner - 5;
-                    width = Window.Current.Bounds.Width - MiniCorner + (BigBorder.ActualWidth / 2 - 10);
+                    left = Window.Current.Bounds.Width - MiniCorner - 5-40;
+                    width = Window.Current.Bounds.Width - MiniCorner + (BigBorder.ActualWidth / 2 - 10)-40;
                     top = MiniCorner - (BigBorder.ActualWidth / 2 - 10);
                     height = MiniCorner;
                     break;
                 case Layouts.RightUp:
                     left = MiniCorner - 5;
                     width = MiniCorner + (BigBorder.ActualWidth / 2 - 10);
-                    top = Window.Current.Bounds.Height - MiniCorner - 50;
-                    height = Window.Current.Bounds.Height - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10);
+                    top = Window.Current.Bounds.Height - MiniCorner - 50-40;
+                    height = Window.Current.Bounds.Height - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10)-40;
                     break;
                 case Layouts.RightBotton:
                     left = MiniCorner - 5;

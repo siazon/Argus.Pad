@@ -35,13 +35,7 @@
                 </StackPanel>
           
         </StackPanel>
-        <Border Name="Cover" Grid.RowSpan="2" Opacity="0.5" Background="Gray" PointerPressed="Cover_PointerPressed">
-            <Border Width="100" Height="100"  >
-            <Border.Background>
-                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Icon/expand_3.png"/>
-            </Border.Background>
-            </Border>
-        </Border>
+     
       
     </Grid>
 </Page>

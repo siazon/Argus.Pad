@@ -1,0 +1,160 @@
+﻿<Page
+    x:Class="Argus.Pad.View.DectionResultView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Argus.Pad.View"
+     xmlns:ime="using:Argus.Pad.IME"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="800" Height="480">
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Background.png"/>
+        </Grid.Background>
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="13*" />
+                <RowDefinition Height="67*" />
+            </Grid.RowDefinitions>
+            <Grid  >
+                <Image Source="ms-appx:///Assets/Icon/Bar_Result.png" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <Button Style="{StaticResource ButtonStyle}" x:Name="btnReturn" Content="返  回" HorizontalAlignment="Right"   Margin="20 10" VerticalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1" >
+                <!--测试结果-->
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="517*"/>
+                    <ColumnDefinition Width="396*"/>
+                    <ColumnDefinition Width="111*"/>
+                </Grid.ColumnDefinitions>
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="196*" />
+                        <ColumnDefinition Width="321*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="NT-ProBNP" Grid.Row="1"  Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF063272" FontSize="28" Tapped="TextBlock_Tapped"  />
+                    <TextBlock Text="CTNI" Grid.Row="4" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF063272" FontSize="28" Visibility="Collapsed"/>
+                    <TextBlock Text="MYO" Grid.Row="7" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF063272" FontSize="28"  Visibility="Collapsed" />
+                    <!-- BNP -->
+                    <Line Grid.Row="1" Grid.Column="1" Height="2" VerticalAlignment="Bottom"  HorizontalAlignment="Center" X1="5" X2="318" Y1="1" Y2="1" Stroke="#FF87A7C3" StrokeThickness="2"/>
+                    <Line Grid.Row="2" Grid.Column="1" Height="2" VerticalAlignment="Bottom"  HorizontalAlignment="Center" X1="5" X2="318" Y1="1" Y2="1" Stroke="#FF87A7C3" StrokeThickness="2"/>
+                    <Line  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Height="3" VerticalAlignment="Bottom" HorizontalAlignment="Center"  X1="50" X2="520" Y1="1" Y2="1" StrokeThickness="3" Opacity="0.85" Width="522">
+                        <Line.Stroke>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0.0,0">
+                                <GradientStop Color="#FFB3C9D3" Offset="0"/>
+                                <GradientStop Color="#FFB3C9D3" Offset="1"/>
+                                <GradientStop Color="#FF224478" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Line.Stroke>
+                    </Line>
+                    <!--<TextBlock Grid.Column="1" Text="{x:Bind DectionResult.ResultValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Margin="0,10,0,0" Width="241"  TextWrapping="Wrap" Height="52" Grid.RowSpan="2"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{x:Bind DectionResult.ResultRange, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Width="177"  />
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{x:Bind DectionResult.ResultTips, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Width="46"  />-->
+
+                    <!--<ContentControl Grid.Row="4" Grid.Column="1" Content="{x:Bind results}" ContentTemplate="{StaticResource TestDataTemplate}"/>-->
+                    <!-- CTNI -->
+                    <!--<Line Grid.Row="4" Grid.Column="1" Height="2" VerticalAlignment="Bottom"  HorizontalAlignment="Center" X1="5" X2="318" Y1="1" Y2="1" Stroke="#FF87A7C3" StrokeThickness="2"/>
+                    <Line Grid.Row="5" Grid.Column="1" Height="2" VerticalAlignment="Bottom"  HorizontalAlignment="Center" X1="5" X2="318" Y1="1" Y2="1" Stroke="#FF87A7C3" StrokeThickness="2"/>
+                    <Line  Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Height="3" VerticalAlignment="Bottom" HorizontalAlignment="Center"  X1="50" X2="520" Y1="1" Y2="1" StrokeThickness="3" Opacity="0.85" Width="522">
+                        <Line.Stroke>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0.0,0">
+                                <GradientStop Color="#FFB3C9D3" Offset="0"/>
+                                <GradientStop Color="#FFB3C9D3" Offset="1"/>
+                                <GradientStop Color="#FF224478" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Line.Stroke>
+                    </Line>
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="31.2 pg/ml" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Margin="0.2,5,0,2.4" Width="140"  />
+                    <TextBlock Grid.Column="1" Grid.Row="5" Text="0 - 100 pg/ml" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F" Margin="0.2,0.6,0,0.4" Width="177"  />
+                    <TextBlock Grid.Column="1" Grid.Row="6" Text="偏高" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Width="46"  />-->
+                    <!-- MYO -->
+                    <!--<Line Grid.Row="7" Grid.Column="1" Height="2" VerticalAlignment="Bottom"  HorizontalAlignment="Center" X1="5" X2="318" Y1="1" Y2="1" Stroke="#FF87A7C3" StrokeThickness="2"/>
+                    <Line Grid.Row="8" Grid.Column="1" Height="2" VerticalAlignment="Bottom"  HorizontalAlignment="Center" X1="5" X2="318" Y1="1" Y2="1" Stroke="#FF87A7C3" StrokeThickness="2"/>
+                    <Line  Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" Height="3" VerticalAlignment="Bottom" HorizontalAlignment="Center"  X1="50" X2="520" Y1="1" Y2="1" StrokeThickness="3" Opacity="0.85" Width="522">
+                        <Line.Stroke>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0.0,0">
+                                <GradientStop Color="#FFB3C9D3" Offset="0"/>
+                                <GradientStop Color="#FFB3C9D3" Offset="1"/>
+                                <GradientStop Color="#FF224478" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Line.Stroke>
+                    </Line>
+                    <TextBlock Grid.Column="1" Grid.Row="7" Text="31.2 pg/ml" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Margin="0.2,5,0,2.4" Width="140"  />
+                    <TextBlock Grid.Column="1" Grid.Row="8" Text="0 - 100 pg/ml" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F" Margin="0.2,0.6,0,0.4" Width="177"  />
+                    <TextBlock Grid.Column="1" Grid.Row="9" Text="偏高" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FF5B728F"  Width="46"  />-->
+
+                    <Image Name="debugPmtInfo" Grid.Column="0" Grid.Row="10" Margin="0,54,76,0" Canvas.ZIndex="1"  Source="Assets/Bar.png" Stretch="Fill"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <!-- Memo 数据-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="65" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="57*"/>
+                        <ColumnDefinition Width="98*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image  Grid.RowSpan="9" Grid.ColumnSpan="2" Source="ms-appx:///Assets/Icon/YellowMemo.png" />
+                    <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Stretch="None" Margin="25,37,57.6,0"/>
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="1" Text="操作者" VerticalAlignment="Center" FontSize="18" Margin="52,0,0,0" FontFamily="Arial" Foreground="#FF4D4D4D" Height="21" Width="54" />
+                    <TextBox x:Name="tester"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" Width="170"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3" GotFocus="Text_GotFocus"/>
+
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="2" Text="送检医生" VerticalAlignment="Center" FontSize="18" Margin="29,4.6,0,0" Foreground="#FF4D4D4D" Height="24" Width="72" />
+                    <TextBox x:Name="doctor"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" Width="170"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3" GotFocus="Text_GotFocus"/>
+
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="3" Text="测试时间" VerticalAlignment="Top" FontSize="18" Margin="0,8,195.333,0" Foreground="#FF4D4D4D" Height="24" Width="72" Grid.ColumnSpan="2" />
+                    <TextBox  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" Width="170"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3" IsEnabled="False"/>
+
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="4" Text="测试地点" VerticalAlignment="Center" FontSize="18" Margin="29,4.6,0,0" Foreground="#FF4D4D4D" Height="24" Width="72" />
+                    <TextBox x:Name="TestSite"  HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1" Width="170"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3"  GotFocus="Text_GotFocus"/>
+
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="5" Text="患者姓名" VerticalAlignment="Center" FontSize="18" Margin="29,4.6,0,0" Foreground="#FF4D4D4D" Height="24" Width="72" />
+                    <TextBox x:Name="PatientName"  HorizontalAlignment="Center"  Grid.Row="5" Grid.Column="1" Width="170"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3"  GotFocus="Text_GotFocus"/>
+
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="6" Text="性别" VerticalAlignment="Center" FontSize="18" Foreground="#FF4D4D4D" Height="24" Width="36" />
+                    <TextBox x:Name="PatientSex"  HorizontalAlignment="Left" Grid.Column="1" Grid.Row="6" Width="40"  BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18" BorderBrush="#FFACA6A6" Opacity="0.3" Text="男" MinWidth="10"  GotFocus="Text_GotFocus"/>
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="6" Text="年龄" VerticalAlignment="Center" FontSize="18" Margin="0,0,110,0" Foreground="#FF4D4D4D" Grid.Column="1" Height="24" Width="36" />
+                    <TextBox x:Name="PatientAge"  HorizontalAlignment="Right"  Grid.Row="6" Grid.Column="1" Width="25"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3" Margin="0,0,40,0" Text="18"  GotFocus="TextSudo_GotFocus"/>
+
+                    <TextBlock HorizontalAlignment="Right"  Grid.Row="7" Text="附注" VerticalAlignment="Center" FontSize="18" Foreground="#FF4D4D4D" Height="24"  Width="36" />
+                    <TextBox x:Name="Notes"  HorizontalAlignment="Left"  Grid.Row="7" Grid.Column="1" Width="115"   BorderThickness="0,0,0,3" RequestedTheme="Light" FontSize="18"  BorderBrush="#FFACA6A6" Opacity="0.3" Margin="6,0,0,0"  GotFocus="Text_GotFocus"/>
+
+                    <ListView Name="PmtValueList" Grid.RowSpan="9" Grid.ColumnSpan="2" Background="#FF9C9696" Foreground="#FF1431EC" Visibility="Collapsed"/>
+                    <Button x:Name="btnSave" Content="保存" HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center" Height="43" Margin="25,10.2,9.6,43.6" Width="79" Visibility="Visible" />
+                    <TextBox x:Name="txtResult" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="13.4,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"   GotFocus="TextSudo_GotFocus" Visibility="Collapsed"/>
+                </Grid>
+                <Image x:Name="btnPrint" Stretch="None" Source="ms-appx:///Assets/Icon/Printer.png" Grid.Column="1" Width="91" Height="95" Grid.ColumnSpan="2" Margin="282,280,23,27"/>
+            </Grid>
+        </Grid>
+        <Popup x:Name="SudokuPopup" Margin="375,165,425,315">
+            <ime:VirtualSudoku x:Name="Sudoku"/>
+        </Popup>
+        <Popup x:Name="KeyboardPopup"  Margin="375,165,425,315">
+            <ime:VirtualKeyboard x:Name="Keyboard"/>
+        </Popup>
+    </Grid>
+</Page>

@@ -99,19 +99,39 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DectionResult.cs" />
     <Compile Include="Common\LayoutEnum.cs" />
     <Compile Include="Controls\BasePage.cs" />
     <Compile Include="Common\NavLind.cs" />
     <Compile Include="Controls\MyWrapPanel.cs" />
+    <Compile Include="Converter\Second2TimeConverter.cs" />
+    <Compile Include="IME\VirtualKeyboard.xaml.cs">
+      <DependentUpon>VirtualKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IME\VirtualSudoku.xaml.cs">
+      <DependentUpon>VirtualSudoku.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\BaseLayoutView.xaml.cs">
+      <DependentUpon>BaseLayoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DectionResultView.xaml.cs">
+      <DependentUpon>DectionResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DectionView.xaml.cs">
+      <DependentUpon>DectionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DetectionView.xaml.cs">
       <DependentUpon>DetectionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PreDectionView.xaml.cs">
+      <DependentUpon>PreDectionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QueryView.xaml.cs">
       <DependentUpon>QueryView.xaml</DependentUpon>
@@ -228,6 +248,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="IME\VirtualKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IME\VirtualSudoku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -237,11 +265,27 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="View\BaseLayoutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DectionResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DetectionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PreDectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
