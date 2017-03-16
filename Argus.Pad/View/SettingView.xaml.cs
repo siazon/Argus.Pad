@@ -40,32 +40,32 @@ namespace Argus.Pad
             //storyboard.Children.Add(animation);
             //storyboard.Begin();
 
-            Storyboard storyboard = new Storyboard();
+            //Storyboard storyboard = new Storyboard();
 
-            DoubleAnimation animation = new DoubleAnimation();
-            animation.From = 10;
-            animation.To = 500;
-            animation.Duration = new Duration(TimeSpan.FromMilliseconds(3000));
-            //animation.EnableDependentAnimation = true;// 没有这一句，动画也可以动  
+            //DoubleAnimation animation = new DoubleAnimation();
+            //animation.From = 10;
+            //animation.To = 500;
+            //animation.Duration = new Duration(TimeSpan.FromMilliseconds(3000));
+            ////animation.EnableDependentAnimation = true;// 没有这一句，动画也可以动  
 
-            Storyboard.SetTarget(animation, btn);
-            Storyboard.SetTargetProperty(animation, "(Canvas.Left)");
+            //Storyboard.SetTarget(animation, btn);
+            //Storyboard.SetTargetProperty(animation, "(Canvas.Left)");
 
-            storyboard.Children.Add(animation);
-            storyboard.Begin();
+            //storyboard.Children.Add(animation);
+            //storyboard.Begin();
 
-            storyboard = new Storyboard();
-            animation = new DoubleAnimation();
-            animation.From = 10;
-            animation.To = 500;
-            animation.Duration = new Duration(TimeSpan.FromMilliseconds(3000));
-            //animation.EnableDependentAnimation = true;// 没有这一句，动画也可以动  
+            //storyboard = new Storyboard();
+            //animation = new DoubleAnimation();
+            //animation.From = 10;
+            //animation.To = 500;
+            //animation.Duration = new Duration(TimeSpan.FromMilliseconds(3000));
+            ////animation.EnableDependentAnimation = true;// 没有这一句，动画也可以动  
 
-            Storyboard.SetTarget(animation, btn);
-            Storyboard.SetTargetProperty(animation, "(Canvas.Top)");
+            //Storyboard.SetTarget(animation, btn);
+            //Storyboard.SetTargetProperty(animation, "(Canvas.Top)");
 
-            storyboard.Children.Add(animation);
-            storyboard.Begin();
+            //storyboard.Children.Add(animation);
+            //storyboard.Begin();
         }
     }
 }

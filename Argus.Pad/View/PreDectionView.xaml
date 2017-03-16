@@ -35,9 +35,9 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <ComboBox x:Name="TestType" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10" MinWidth="270">
-                <ComboBox.Items>
-                    <ComboBoxItem>质控---标准光源测试</ComboBoxItem>
+            <ComboBox x:Name="cboxTestType" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10" MinWidth="270" SelectedItem="{Binding TestType}">
+                <!--<ComboBox.Items>
+                    <ComboBoxItem>质控-标准光源测试</ComboBoxItem>
                     <ComboBoxItem>NT-proBNP</ComboBoxItem>
                     <ComboBoxItem>cTni</ComboBoxItem>
                     <ComboBoxItem>cTnT</ComboBoxItem>
@@ -48,15 +48,12 @@
                     <ComboBoxItem>D-Dimer</ComboBoxItem>
                     <ComboBoxItem>MPO</ComboBoxItem>
                     <ComboBoxItem>Lp-PLA2</ComboBoxItem>
-                </ComboBox.Items>
+                </ComboBox.Items>-->
             </ComboBox>
-            <Image Grid.Row="1" Source="ms-appx:///Assets/Icon/PreDection.png" HorizontalAlignment="Center"   />
+            <Image Grid.Row="1" Source="ms-appx:///Assets/Icon/PreDection.png" HorizontalAlignment="Center" PointerPressed="btnCloseDoor_PointerPressed" />
             <TextBlock Grid.Row="2" HorizontalAlignment="Center"  FontSize="24" TextAlignment="Center" Name="tipInfo"
                        TextWrapping="WrapWholeWords" Width="470" FontFamily="Segoe UI Semibold" Foreground="#FF0840D4" Text="请将定量的样本加入试剂卡,盖上堵盖&#xD;&#xA;并将试剂卡正确的放入托盘,再次点击屏幕" OpticalMarginAlignment="TrimSideBearings" />
-            <StackPanel x:Name="btnCloseDoor" DataContext="关抽屉" HorizontalAlignment="Right" Height="65"  Background="White" CornerRadius="10" Margin="10"
-                    Grid.Row="3" VerticalAlignment="Center"  Width="150" Visibility="Visible" PointerPressed="btnCloseDoor_PointerPressed">
-                <TextBlock FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 7">关抽屉</TextBlock>
-            </StackPanel>
+            
         </Grid>
     </Grid>
 </Page>

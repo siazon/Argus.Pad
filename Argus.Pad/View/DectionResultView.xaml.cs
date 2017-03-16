@@ -30,7 +30,7 @@ namespace Argus.Pad.View
 
         private void Text_GotFocus(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void TextSudo_GotFocus(object sender, RoutedEventArgs e)

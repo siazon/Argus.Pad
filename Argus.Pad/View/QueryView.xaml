@@ -6,6 +6,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <CollectionViewSource x:Key="ItemsGroupedByGroup" IsSourceGrouped="True" ItemsPath="Items" Source="{Binding Groups, Source={StaticResource SampleDataSource}}"/>
+        <CollectionViewSource x:Key="ItemsGroupedByGroup1" IsSourceGrouped="True" ItemsPath="Items" Source="{Binding Groups, Source={StaticResource SampleDataSource}}"/>
+    </Page.Resources>
 
     <Grid>
         <Grid.Background>
@@ -27,6 +31,6 @@
             <Button Style="{StaticResource ButtonStyle}" FontSize="25" Margin="10 5" >查 询</Button>
             <Button  Style="{StaticResource ButtonStyle}"  FontSize="25" Margin="10 5">返 回</Button>
         </StackPanel>
-       
+
     </Grid>
 </Page>

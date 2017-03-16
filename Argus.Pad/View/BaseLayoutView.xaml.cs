@@ -38,6 +38,7 @@ namespace Argus.Pad.View
             base.OnNavigatedTo(e);
             mainView = (MainView)e.Parameter;
             _CurreLayout = mainView.Layout;
+            Frame rootFrame = Window.Current.Content as Frame;
             this.MainFram.Navigate(typeof(DetectionView),this);
         }
         public void NavigatedTo(Type type)
@@ -61,6 +62,7 @@ namespace Argus.Pad.View
 
         private void Cover_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
+          
             mainView.DragMove(_CurreLayout);
         }
     }
