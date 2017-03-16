@@ -21,10 +21,11 @@ namespace Argus.Pad.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public  partial class BaseLayoutView : Page
+    public partial class BaseLayoutView : Page
     {
         private Layouts _CurreLayout;
-      public  MainView mainView;
+        public MainView MainView;
+        public Object Parameter;
         public BaseLayoutView()
         {
             this.InitializeComponent();
@@ -36,13 +37,14 @@ namespace Argus.Pad.View
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            mainView = (MainView)e.Parameter;
-            _CurreLayout = mainView.Layout;
+            MainView = (MainView)e.Parameter;
+            _CurreLayout = MainView.Layout;
             Frame rootFrame = Window.Current.Content as Frame;
-            this.MainFram.Navigate(typeof(DetectionView),this);
+            this.MainFram.Navigate(typeof(DetectionView), this);
         }
-        public void NavigatedTo(Type type)
+        public void NavigatedTo(Type type,object parameter=null)
         {
+            this.Parameter = parameter;
             this.MainFram.Navigate(type, this);
         }
         private void BaseLayoutView_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -62,8 +64,8 @@ namespace Argus.Pad.View
 
         private void Cover_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-          
-            mainView.DragMove(_CurreLayout);
+
+            MainView.DragMove(_CurreLayout);
         }
     }
 }

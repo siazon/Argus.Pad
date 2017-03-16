@@ -33,7 +33,7 @@ namespace Argus.Pad.View
         {
             base.OnNavigatedTo(e);
             mainView = (BaseLayoutView)e.Parameter;
-            txtItemName.Text=mainView
+            txtItemName.Text = mainView.Parameter.ToString();
             timeCounter.Interval = new TimeSpan(10000000);
             timeCounter.Tick += TimeCounter_Tick;
             timeCounter.Start();

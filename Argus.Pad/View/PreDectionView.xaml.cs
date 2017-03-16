@@ -32,17 +32,7 @@ namespace Argus.Pad.View
 
         #endregion
         #region 属性
-        private string testType;
-
-        public string TestType
-        {
-            get { return testType; }
-            set
-            {
-                testType = value;
-                this.RaisePropertyChanged("TestType");
-            }
-        }
+       
 
         #endregion
         public event PropertyChangedEventHandler PropertyChanged;
@@ -67,6 +57,10 @@ namespace Argus.Pad.View
                     cboxTestType.Items.Add(field.Name);
                 }
             }
+            if (enumFields.Count()>0)
+            {
+                cboxTestType.SelectedIndex = 0;
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -76,8 +70,7 @@ namespace Argus.Pad.View
         }
         private void btnCloseDoor_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            testType = cboxTestType.SelectedItem.ToString();
-            mainView.NavigatedTo(typeof(DectionView));
+            mainView.NavigatedTo(typeof(DectionView), cboxTestType.SelectedItem.ToString());
         }
     }
 }
