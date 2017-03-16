@@ -25,7 +25,7 @@ namespace Argus.Pad.View
     {
         private Layouts _CurreLayout;
         public MainView MainView;
-        public Object Parameter;
+        public Object Parameter ;
         public BaseLayoutView()
         {
             this.InitializeComponent();
@@ -46,6 +46,13 @@ namespace Argus.Pad.View
         {
             this.Parameter = parameter;
             this.MainFram.Navigate(type, this);
+        }
+        public void NavigatedBack()
+        {
+            if (MainFram.CanGoBack)
+            {
+                MainFram.GoBack();
+            }
         }
         private void BaseLayoutView_SizeChanged(object sender, SizeChangedEventArgs e)
         {

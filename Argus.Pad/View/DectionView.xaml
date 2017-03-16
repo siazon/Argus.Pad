@@ -26,19 +26,19 @@
         </Grid.Background>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="60*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="49"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Grid.Row="1" Grid.Column="0" Stretch="None" VerticalAlignment="Center"/>
-            <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Grid.Row="2" Grid.Column="0" Stretch="None" VerticalAlignment="Center"  Visibility="Collapsed"/>
-            <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Grid.Row="3" Grid.Column="0" Stretch="None" VerticalAlignment="Center" Visibility="Collapsed" />
+            <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Grid.Row="1" Grid.Column="0" Margin="10" MaxHeight="30" VerticalAlignment="Center"/>
+            <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Grid.Row="2" Grid.Column="0"  Margin="10" MaxHeight="30" VerticalAlignment="Center"  Visibility="Collapsed"/>
+            <Image Source="ms-appx:///Assets/Icon/BlueSpot.png" Grid.Row="3" Grid.Column="0"  Margin="10" MaxHeight="30" VerticalAlignment="Center" Visibility="Collapsed" />
             <TextBlock Grid.Row="1" Grid.Column="1" FontSize="28" FontFamily="Arial Black" Text=""   HorizontalAlignment="Left"  Foreground="#FF082A9E" VerticalAlignment="Center" Name="txtItemName"/>
             <TextBlock Grid.Row="2" Grid.Column="1" FontSize="42.667" FontFamily="Arial Black" Text="CTNI"  HorizontalAlignment="Left"   Foreground="#FF082A9E"  Visibility="Collapsed"/>
             <TextBlock Grid.Row="3" Grid.Column="1" FontSize="42.667" FontFamily="Arial Black"  Text="MYO"  HorizontalAlignment="Left"  Foreground="#FF082A9E"  Visibility="Collapsed"/>
@@ -128,8 +128,8 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="2" Source="ms-appx:///Assets/Icon/Editor.png" Stretch="None" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10" PointerPressed="Image_PointerPressed" />
-            <Button x:Name="btnShowResult" Content="显示结果" HorizontalAlignment="Left" Height="140" Margin="10" Grid.Row="1" VerticalAlignment="Top" Width="180" FontSize="37.333" Visibility="Collapsed"/>
+            <Image Grid.Row="2" Source="ms-appx:///Assets/Icon/Editor.png"  VerticalAlignment="Bottom" HorizontalAlignment="Center"  PointerPressed="Image_PointerPressed" />
+            <!--<Button x:Name="btnShowResult" Content="显示结果" HorizontalAlignment="Left" Height="140" Margin="10" Grid.Row="1" VerticalAlignment="Top" Width="180" FontSize="37.333" Visibility="Collapsed"/>-->
         </Grid>
         <TextBlock x:Name="ErrInfo" HorizontalAlignment="Left" Height="62" Grid.Row="1" Grid.ColumnSpan="2"  TextWrapping="Wrap" Text="" FontSize="30" VerticalAlignment="Center"  Visibility="Visible" />
 

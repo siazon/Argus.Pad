@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,12 +23,32 @@ namespace Argus.Pad.View
     /// </summary>
     public sealed partial class DectionResultView : Page
     {
-        public DectionResult results = new DectionResult();
+
+        BaseLayoutView mainView;
+        private DectionResult _result;
+
+        public DectionResult Result
+        {
+            get { return _result; }
+            set { _result = value;
+               // this.OnPropertyChanged("Result");
+            }
+        }
+
         public DectionResultView()
         {
             this.InitializeComponent();
-        }
+            //_result.ResultRange = "123";
+            //_result.ResultTips = "123";
+            //_result.ResultValue = "123";
+            
 
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            mainView = (BaseLayoutView)e.Parameter;
+        }
         private void Text_GotFocus(object sender, RoutedEventArgs e)
         {
 
@@ -42,5 +63,11 @@ namespace Argus.Pad.View
         {
 
         }
+
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            mainView.NavigatedBack();
+        }
     }
+ 
 }

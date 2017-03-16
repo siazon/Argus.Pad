@@ -22,9 +22,9 @@ namespace Argus.Pad.View
     /// </summary>
     public sealed partial class DectionView : Page
     {
-        DispatcherTimer timeCounter = new DispatcherTimer() ;
+        DispatcherTimer timeCounter = new DispatcherTimer();
         BaseLayoutView mainView;
-        DateTime countDownTime = new DateTime(2017,1,1,0,15,0);
+        DateTime countDownTime = new DateTime(2017, 1, 1, 0, 15, 0);
         public DectionView()
         {
             this.InitializeComponent();
@@ -33,17 +33,24 @@ namespace Argus.Pad.View
         {
             base.OnNavigatedTo(e);
             mainView = (BaseLayoutView)e.Parameter;
-            txtItemName.Text = mainView.Parameter.ToString();
-            timeCounter.Interval = new TimeSpan(10000000);
+            if (mainView.Parameter != null)
+                txtItemName.Text = mainView.Parameter.ToString();
+            timeCounter.Interval = new TimeSpan(100000);
             timeCounter.Tick += TimeCounter_Tick;
             timeCounter.Start();
-            txtTimeCount.Text = string.Format("{0}:{1}",countDownTime.Minute.ToString().PadLeft(2,'0'),countDownTime.Second.ToString().PadLeft(2, '0'));
+            txtTimeCount.Text = string.Format("{0}:{1}", countDownTime.Minute.ToString().PadLeft(2, '0'), countDownTime.Second.ToString().PadLeft(2, '0'));
+
         }
 
         private void TimeCounter_Tick(object sender, object e)
         {
-            countDownTime= countDownTime.AddSeconds(-1);
+            countDownTime = countDownTime.AddSeconds(-1);
             txtTimeCount.Text = string.Format("{0}:{1}", countDownTime.Minute.ToString().PadLeft(2, '0'), countDownTime.Second.ToString().PadLeft(2, '0'));
+            if (countDownTime.Year < 2017)
+            {
+                timeCounter.Stop();
+                mainView.NavigatedTo(typeof(DectionResultView));
+            }
         }
 
         private void Image_PointerPressed(object sender, PointerRoutedEventArgs e)

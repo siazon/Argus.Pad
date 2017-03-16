@@ -24,7 +24,7 @@ namespace Argus.Pad.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public partial class PreDectionView : Page, INotifyPropertyChanged
+    public partial class PreDectionView : Page
     {
         #region 字段
 
@@ -35,15 +35,7 @@ namespace Argus.Pad.View
        
 
         #endregion
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void RaisePropertyChanged(string propertyName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+     
         public PreDectionView()
         {
             this.InitializeComponent();

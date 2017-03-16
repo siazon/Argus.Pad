@@ -101,6 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\TestType.cs" />
+    <Compile Include="Controls\NotifyBasePage.cs" />
     <Compile Include="DectionResult.cs" />
     <Compile Include="Common\LayoutEnum.cs" />
     <Compile Include="Controls\BasePage.cs" />
