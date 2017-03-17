@@ -22,17 +22,11 @@ namespace Argus.Pad.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class DetectionView : Page, INotifyPropertyChanged
+    public sealed partial class DetectionView : Page
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void RaisePropertyChanged(string propertyName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+      
         BaseLayoutView mainView;
         public DetectionView()
         {

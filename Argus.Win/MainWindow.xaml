@@ -1,0 +1,50 @@
+﻿<Window x:Class="Argus.Win.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Argus.Win"
+        xmlns:View="clr-namespace:Argus.Win.View"
+        mc:Ignorable="d"
+        Title="MainWindow"  WindowStyle="None" WindowState="Maximized">
+    <Grid>
+        <Canvas x:Name="ConCanvas" MouseLeftButtonUp="BigBorder_MouseLeftButtonUp" MouseMove="BigBorder_MouseMove">
+            <Grid Name="grid"  Width="{Binding ElementName=ConCanvas,Path=ActualWidth}" Height="{Binding ElementName=ConCanvas,Path=ActualHeight}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="r1"></RowDefinition>
+                    <RowDefinition x:Name="r2" Height="10"></RowDefinition>
+                    <RowDefinition x:Name="r3"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="c1"></ColumnDefinition>
+                    <ColumnDefinition x:Name="c2" Width="10"></ColumnDefinition>
+                    <ColumnDefinition x:Name="c3"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Border Background="White" Grid.Column="1"></Border>
+                <Border Background="White" Grid.Column="1" Grid.Row="2"></Border>
+                <Border Background="White" Grid.Row="1"></Border>
+                <Border Background="White" Grid.Row="1" Grid.Column="2"></Border>
+                <Border  Name="border" Background="Black" AllowDrop="True" Grid.Column="1" Grid.Row="1" CornerRadius="5"  >
+                    <!--<Border.Triggers>
+                        <EventTrigger >
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="5x" AutoReverse="True">
+                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Width" From="15" To="5" Duration="0:0:1"></DoubleAnimation>
+                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Height" From="15" To="5" Duration="0:0:1"></DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>-->
+                </Border>
+                <View:DetectionView x:Name="LeftUpFrame" ></View:DetectionView>
+                <View:DetectionView x:Name="RightUpFrame" Grid.Column="2"></View:DetectionView>
+                <View:DetectionView x:Name="LeftBottonFrame" Grid.Row="2"></View:DetectionView>
+                <View:DetectionView x:Name="RightBottonFrame"  Grid.Row="2"  Grid.Column="2"></View:DetectionView>
+
+            </Grid>
+            <Border x:Name="BigBorder"  Height="50" Width="50" CornerRadius="30" Background="Black"   Canvas.Left="354" Canvas.Top="237" MouseLeftButtonDown="BigBorder_MouseLeftButtonDown" MouseLeftButtonUp="BigBorder_MouseLeftButtonUp" MouseMove="BigBorder_MouseMove"/>
+        </Canvas>
+    </Grid>
+</Window>

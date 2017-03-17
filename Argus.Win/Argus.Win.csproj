@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE073F2B-BC86-4751-854A-EEAF9291E7C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Argus.Win</RootNamespace>
+    <AssemblyName>Argus.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="View\BaseLayoutView.xaml.cs">
+      <DependentUpon>BaseLayoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetectionView.xaml.cs">
+      <DependentUpon>DetectionView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\BaseLayoutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DetectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\LayoutControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Background.png" />
+    <Resource Include="Image\Bar.png" />
+    <Resource Include="Image\Icon\Bar_Logo.png" />
+    <Resource Include="Image\Icon\Bar_Logo_mini.png" />
+    <Resource Include="Image\Icon\Bar_Result.png" />
+    <Resource Include="Image\Icon\BlueSpot.png" />
+    <Resource Include="Image\Icon\ClockBackground.png" />
+    <Resource Include="Image\Icon\Detection.png" />
+    <Resource Include="Image\Icon\Editor.png" />
+    <Resource Include="Image\Icon\expand_1.png" />
+    <Resource Include="Image\Icon\expand_2.png" />
+    <Resource Include="Image\Icon\expand_3.png" />
+    <Resource Include="Image\Icon\Option.png" />
+    <Resource Include="Image\Icon\PreDection.png" />
+    <Resource Include="Image\Icon\Printer.png" />
+    <Resource Include="Image\Icon\Query.png" />
+    <Resource Include="Image\Icon\RedSpot.png" />
+    <Resource Include="Image\Icon\YellowMemo.png" />
+    <Resource Include="Image\LockScreenLogo.scale-200.png" />
+    <Resource Include="Image\logo.png" />
+    <Resource Include="Image\SplashScreen.scale-200.png" />
+    <Resource Include="Image\Square150x150Logo.scale-200.png" />
+    <Resource Include="Image\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Resource Include="Image\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Resource Include="Image\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Resource Include="Image\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Resource Include="Image\Square44x44Logo.scale-100.png" />
+    <Resource Include="Image\Square44x44Logo.scale-125.png" />
+    <Resource Include="Image\Square44x44Logo.scale-150.png" />
+    <Resource Include="Image\Square44x44Logo.scale-200.png" />
+    <Resource Include="Image\Square44x44Logo.scale-400.png" />
+    <Resource Include="Image\Square44x44Logo.targetsize-16.png" />
+    <Resource Include="Image\Square44x44Logo.targetsize-24.png" />
+    <Resource Include="Image\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Resource Include="Image\Square44x44Logo.targetsize-256.png" />
+    <Resource Include="Image\Square44x44Logo.targetsize-32.png" />
+    <Resource Include="Image\Square44x44Logo.targetsize-48.png" />
+    <Resource Include="Image\StartAnimation\001.png" />
+    <Resource Include="Image\StartAnimation\002.png" />
+    <Resource Include="Image\StartAnimation\003.png" />
+    <Resource Include="Image\StartAnimation\004.png" />
+    <Resource Include="Image\StartAnimation\005.png" />
+    <Resource Include="Image\StartAnimation\006.png" />
+    <Resource Include="Image\StartAnimation\007.png" />
+    <Resource Include="Image\StartAnimation\008.png" />
+    <Resource Include="Image\StartAnimation\009.png" />
+    <Resource Include="Image\StartAnimation\010.png" />
+    <Resource Include="Image\StartAnimation\011.png" />
+    <Resource Include="Image\StartAnimation\012.png" />
+    <Resource Include="Image\StartAnimation\013.png" />
+    <Resource Include="Image\StartAnimation\014.png" />
+    <Resource Include="Image\StartAnimation\015.png" />
+    <Resource Include="Image\StartAnimation\016.png" />
+    <Resource Include="Image\StartAnimation\017.png" />
+    <Resource Include="Image\StartAnimation\018.png" />
+    <Resource Include="Image\StartAnimation\019.png" />
+    <Resource Include="Image\StartAnimation\020.png" />
+    <Resource Include="Image\StartAnimation\021.png" />
+    <Resource Include="Image\StartAnimation\022.png" />
+    <Resource Include="Image\StartAnimation\023.png" />
+    <Resource Include="Image\StartAnimation\024.png" />
+    <Resource Include="Image\StartAnimation\025.png" />
+    <Resource Include="Image\StartAnimation\026.png" />
+    <Resource Include="Image\StartAnimation\027.png" />
+    <Resource Include="Image\StartAnimation\028.png" />
+    <Resource Include="Image\StartAnimation\029.png" />
+    <Resource Include="Image\StartAnimation\030.png" />
+    <Resource Include="Image\StartAnimation\031.png" />
+    <Resource Include="Image\StartAnimation\032.png" />
+    <Resource Include="Image\StartAnimation\033.png" />
+    <Resource Include="Image\StartAnimation\034.png" />
+    <Resource Include="Image\StartAnimation\035.png" />
+    <Resource Include="Image\StartAnimation\036.png" />
+    <Resource Include="Image\StartAnimation\037.png" />
+    <Resource Include="Image\StartAnimation\038.png" />
+    <Resource Include="Image\StartAnimation\039.png" />
+    <Resource Include="Image\StartAnimation\040.png" />
+    <Resource Include="Image\StartAnimation\041.png" />
+    <Resource Include="Image\StartAnimation\042.png" />
+    <Resource Include="Image\StartAnimation\043.png" />
+    <Resource Include="Image\StartAnimation\044.png" />
+    <Resource Include="Image\StartAnimation\045.png" />
+    <Resource Include="Image\StartAnimation\046.png" />
+    <Resource Include="Image\StartAnimation\047.png" />
+    <Resource Include="Image\StartAnimation\048.png" />
+    <Resource Include="Image\StartAnimation\049.png" />
+    <Resource Include="Image\StartAnimation\050.png" />
+    <Resource Include="Image\StartAnimation\051.png" />
+    <Resource Include="Image\StartAnimation\052.png" />
+    <Resource Include="Image\StartAnimation\053.png" />
+    <Resource Include="Image\StartAnimation\054.png" />
+    <Resource Include="Image\StartAnimation\055.png" />
+    <Resource Include="Image\StoreLogo.png" />
+    <Resource Include="Image\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

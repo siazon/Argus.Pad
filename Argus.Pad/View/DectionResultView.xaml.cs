@@ -1,4 +1,5 @@
 ﻿
+using Argus.Pad.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,33 +22,55 @@ namespace Argus.Pad.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class DectionResultView : Page
+    public sealed partial class DectionResultView : NotifyBasePage
     {
 
         BaseLayoutView mainView;
         private DectionResult _result;
 
+
         public DectionResult Result
         {
             get { return _result; }
-            set { _result = value;
-               // this.OnPropertyChanged("Result");
+            set
+            {
+                _result = value;
+                this.OnPropertyChanged("Result");
             }
         }
+        private TestOrder _order;
+
+        public TestOrder Order
+        {
+            get { return _order; }
+            set
+            {
+                _order = value;
+                this.OnPropertyChanged("Order");
+            }
+        }
+
+
+       
+
 
         public DectionResultView()
         {
             this.InitializeComponent();
-            //_result.ResultRange = "123";
-            //_result.ResultTips = "123";
-            //_result.ResultValue = "123";
+            // this.DataContext = this;
+            _result = new DectionResult();
+            _result.ResultRange = "100-300";
+            _result.ResultTips = "ABC";
+            _result.ResultValue = "质控---标准光源测试呈阴性";
+            Order = new TestOrder() { Age=18, Doctor="刘医生", Gender="男", Name="王大锤", Operater="王小利", Remark="请尊医嘱", TestAddr="南山医院", TestTime=DateTime.Now };
             
-
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             mainView = (BaseLayoutView)e.Parameter;
+            if (mainView.Parameter != null)
+                TestTitle.Text = mainView.Parameter.ToString();
         }
         private void Text_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -66,8 +89,20 @@ namespace Argus.Pad.View
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
+            mainView.Parameter = TestTitle.Text;
             mainView.NavigatedBack();
         }
+
+        private void btnSave_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            Order.Name = "ggg";
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Order.Name = "ggg";
+        }
     }
- 
+  
+
 }

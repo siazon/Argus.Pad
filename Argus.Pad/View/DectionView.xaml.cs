@@ -55,6 +55,7 @@ namespace Argus.Pad.View
 
         private void Image_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
+            mainView.Parameter = txtItemName.Text;
             mainView.NavigatedTo(typeof(DectionResultView));
         }
     }

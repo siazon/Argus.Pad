@@ -44,7 +44,7 @@
                 <Frame x:Name="RightBottonFrame"  Grid.Row="2"  Grid.Column="2"></Frame>
 
             </Grid>
-            <Border x:Name="BigBorder"  Height="50" Width="50" CornerRadius="30" Background="Black"   PointerPressed="border_PointerPressed" Canvas.Left="305" Canvas.Top="168"  />
+            <Border x:Name="BigBorder"  Height="50" Width="50" CornerRadius="30" Background="Black"   PointerPressed="border_PointerPressed" Canvas.Left="305" Canvas.Top="168" PointerMoved="BigBorder_PointerMoved" PointerReleased="BigBorder_PointerReleased" />
         </Canvas>
     </Grid>
 </local:BasePage>
