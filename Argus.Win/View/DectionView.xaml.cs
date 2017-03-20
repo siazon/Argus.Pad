@@ -22,14 +22,14 @@ namespace Argus.Win.View
     {
         public System.Timers.Timer timeCounter = new System.Timers.Timer(10);
         DateTime countDownTime = new DateTime(2017, 1, 1, 0, 15, 0);
-        public DectionView()
+        public DectionView(string TestType="")
         {
             InitializeComponent();
             timeCounter.Elapsed += TimeCounter_Elapsed;
             timeCounter.Start();
+            txtItemName.Text = TestType;
 
         }
-
         private void TimeCounter_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             this.Dispatcher.BeginInvoke((Action)(() =>
@@ -49,7 +49,10 @@ namespace Argus.Win.View
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            Grid MainControl = (Grid)this.Parent;
+            MainControl.Children.Clear();
+            DectionResultView view = new DectionResultView();
+            MainControl.Children.Add(view);
         }
     }
 }

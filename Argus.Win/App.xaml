@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Argus.Win"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/RoundedGelButton.xaml" />
+                <ResourceDictionary Source="Style/GrayBorderButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
+    
 </Application>

@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Argus.Win"
         xmlns:View="clr-namespace:Argus.Win.View"
+        xmlns:Win="clr-namespace:Argus.Win"
         mc:Ignorable="d"
         Title="MainWindow"  WindowStyle="None" WindowState="Maximized">
+    <Window.Resources>
+        <Storyboard x:Key="sbDock">
+            <local:GridLengthAnimation BeginTime="00:00:00" Storyboard.TargetName="c1" Storyboard.TargetProperty="Width">
+            </local:GridLengthAnimation>
+        </Storyboard>
+        <Storyboard x:Key="srDock">
+            <local:GridLengthAnimation BeginTime="00:00:00" Storyboard.TargetName="r1" Storyboard.TargetProperty="Height">
+            </local:GridLengthAnimation>
+        </Storyboard>
+    </Window.Resources>
     <Grid>
         <Canvas x:Name="ConCanvas" MouseLeftButtonUp="BigBorder_MouseLeftButtonUp" MouseMove="BigBorder_MouseMove">
             <Grid Name="grid"  Width="{Binding ElementName=ConCanvas,Path=ActualWidth}" Height="{Binding ElementName=ConCanvas,Path=ActualHeight}">
@@ -45,7 +56,9 @@
                 <Grid x:Name="RightBottonFrame"  Grid.Row="2"  Grid.Column="2"></Grid>
 
             </Grid>
-            <Border x:Name="BigBorder"  Height="50" Width="50" CornerRadius="30" Background="Black"   Canvas.Left="354" Canvas.Top="237" MouseLeftButtonDown="BigBorder_MouseLeftButtonDown" MouseLeftButtonUp="BigBorder_MouseLeftButtonUp" MouseMove="BigBorder_MouseMove"/>
+            <Border x:Name="BigBorder"  Height="50" Width="50"  Background="Black"  CornerRadius="50" Canvas.Left="354" Canvas.Top="237" MouseLeftButtonDown="BigBorder_MouseLeftButtonDown" MouseLeftButtonUp="BigBorder_MouseLeftButtonUp" MouseMove="BigBorder_MouseMove" >
+             
+            </Border>
         </Canvas>
     </Grid>
 </Window>

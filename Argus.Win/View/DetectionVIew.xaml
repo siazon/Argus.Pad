@@ -29,14 +29,14 @@
 
             </Border>
         </Border>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" Background="White" >
+        <Border Grid.Row="1" Style="{StaticResource GrayBorderButton}" CornerRadius="20" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center"  MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+        
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" >
                 <Image Width="268" Height="140" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Argus.Win;component/Image/Icon/Detection.png"  />
                 <TextBlock FontSize="30" HorizontalAlignment="Center">检 测</TextBlock>
             </StackPanel>
 
-        </StackPanel>
-
+        </Border>
 
     </Grid>
 

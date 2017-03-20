@@ -27,13 +27,13 @@
                 <RowDefinition Height="60*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="70*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="80*"/>
             </Grid.ColumnDefinitions>
             <Image Source="/Argus.Win;component/Image/Icon/BlueSpot.png" Grid.Row="1" Grid.Column="0" Margin="10" MaxHeight="30" VerticalAlignment="Center"/>
             <Image Source="/Argus.Win;component/Image/Icon/BlueSpot.png" Grid.Row="2" Grid.Column="0"  Margin="10" MaxHeight="30" VerticalAlignment="Center"  Visibility="Collapsed"/>
             <Image Source="/Argus.Win;component/Image/Icon/BlueSpot.png" Grid.Row="3" Grid.Column="0"  Margin="10" MaxHeight="30" VerticalAlignment="Center" Visibility="Collapsed" />
-            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="28" FontFamily="Arial Black" Text=""   HorizontalAlignment="Left"  Foreground="#FF082A9E" VerticalAlignment="Center" Name="txtItemName"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25" FontFamily="Arial Black" Text=""   HorizontalAlignment="Left"  Foreground="#FF082A9E" VerticalAlignment="Center" Name="txtItemName"/>
             <TextBlock Grid.Row="2" Grid.Column="1" FontSize="42.667" FontFamily="Arial Black" Text="CTNI"  HorizontalAlignment="Left"   Foreground="#FF082A9E"  Visibility="Collapsed"/>
             <TextBlock Grid.Row="3" Grid.Column="1" FontSize="42.667" FontFamily="Arial Black"  Text="MYO"  HorizontalAlignment="Left"  Foreground="#FF082A9E"  Visibility="Collapsed"/>
         </Grid>

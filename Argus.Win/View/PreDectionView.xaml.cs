@@ -29,7 +29,7 @@ namespace Argus.Win.View
         {
             Grid MainControl = (Grid)this.Parent;
             MainControl.Children.Clear();
-            DectionView view = new DectionView();
+            DectionView view = new DectionView(this.cboxTestType.SelectionBoxItem.ToString()) ;
             MainControl.Children.Add(view);
         }
     }

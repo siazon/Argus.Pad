@@ -44,5 +44,18 @@ namespace Argus.Win.View
         {
 
         }
+
+        private void btnSave_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btnReturn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid MainControl = (Grid)this.Parent;
+            MainControl.Children.Clear();
+            DectionView view = new DectionView();
+            MainControl.Children.Add(view);
+        }
     }
 }

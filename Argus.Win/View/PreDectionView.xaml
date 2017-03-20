@@ -34,8 +34,8 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <ComboBox x:Name="cboxTestType" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10" MinWidth="270" SelectedItem="{Binding TestType}">
-                <!--<ComboBox.Items>
+            <ComboBox x:Name="cboxTestType" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10" MinWidth="270" MinHeight="30" FontSize="18" Background="White" SelectedItem="{Binding TestType}">
+                <ComboBox.Items>
                     <ComboBoxItem>质控-标准光源测试</ComboBoxItem>
                     <ComboBoxItem>NT-proBNP</ComboBoxItem>
                     <ComboBoxItem>cTni</ComboBoxItem>
@@ -47,7 +47,7 @@
                     <ComboBoxItem>D-Dimer</ComboBoxItem>
                     <ComboBoxItem>MPO</ComboBoxItem>
                     <ComboBoxItem>Lp-PLA2</ComboBoxItem>
-                </ComboBox.Items>-->
+                </ComboBox.Items>
             </ComboBox>
             <Image Grid.Row="1" Source="/Argus.Win;component/Image/Icon/PreDection.png" HorizontalAlignment="Center" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
             <TextBlock Grid.Row="2" HorizontalAlignment="Center"  FontSize="24" TextAlignment="Center" Name="tipInfo"
