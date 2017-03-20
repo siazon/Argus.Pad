@@ -16,22 +16,21 @@ using System.Windows.Shapes;
 namespace Argus.Win.View
 {
     /// <summary>
-    /// DetectionView.xaml 的交互逻辑
+    /// PreDectionView.xaml 的交互逻辑
     /// </summary>
-    public partial class DetectionView : UserControl
+    public partial class PreDectionView : UserControl
     {
-        public DetectionView()
+        public PreDectionView()
         {
             InitializeComponent();
         }
 
-        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Grid MainControl = (Grid)this.Parent;
             MainControl.Children.Clear();
-            PreDectionView view = new PreDectionView();
+            DectionView view = new DectionView();
             MainControl.Children.Add(view);
-
         }
     }
 }

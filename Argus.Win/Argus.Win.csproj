@@ -54,11 +54,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class\LayoutEnum.cs" />
+    <Compile Include="Class\SystemMemory.cs" />
+    <Compile Include="Class\TestType.cs" />
     <Compile Include="View\BaseLayoutView.xaml.cs">
       <DependentUpon>BaseLayoutView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DectionResultView.xaml.cs">
+      <DependentUpon>DectionResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DectionView.xaml.cs">
+      <DependentUpon>DectionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DetectionView.xaml.cs">
       <DependentUpon>DetectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PreDectionView.xaml.cs">
+      <DependentUpon>PreDectionView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -76,7 +88,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DectionResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DetectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PreDectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +132,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Style\" />
     <Folder Include="View\LayoutControl\" />
   </ItemGroup>
   <ItemGroup>

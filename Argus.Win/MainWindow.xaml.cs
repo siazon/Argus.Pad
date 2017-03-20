@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Argus.Win.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace Argus.Win
         public MainWindow()
         {
             InitializeComponent();
+            SystemMemory.Instance.MainWindow = this;
             this.Loaded += MainWindow_Loaded;
         }
 
@@ -32,6 +34,17 @@ namespace Argus.Win
         {
             Canvas.SetLeft(this.BigBorder, (ConCanvas.ActualWidth - this.BigBorder.ActualWidth) / 2);
             Canvas.SetTop(this.BigBorder, (ConCanvas.ActualHeight - this.BigBorder.ActualHeight) / 2);
+            BaseLayoutView view = new BaseLayoutView() {  _CurreLayout=Layouts.LeftUp};
+            this.LeftUpFrame.Children.Add(view);
+
+            view = new BaseLayoutView() { _CurreLayout = Layouts.RightUp };
+            this.RightUpFrame.Children.Add(view);
+
+            view = new BaseLayoutView() { _CurreLayout = Layouts.LeftBottom };
+            this.LeftBottonFrame.Children.Add(view);
+
+            view = new BaseLayoutView() { _CurreLayout = Layouts.RightBotton };
+            this.RightBottonFrame.Children.Add(view);
         }
 
         private void BigBorder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -101,9 +114,9 @@ namespace Argus.Win
                     top = MiniCorner - (BigBorder.ActualWidth / 2 - 10);
                     height = MiniCorner;
                 }
-                else if (top > SystemParameters.PrimaryScreenHeight - MiniCorner - -10)// 50)
+                else if (top > SystemParameters.PrimaryScreenHeight - MiniCorner - 10)// 50)
                 {//为了平整右和下都-40
-                    top = SystemParameters.PrimaryScreenHeight - MiniCorner - 50;// - 40;
+                    top = SystemParameters.PrimaryScreenHeight - MiniCorner - 10;// - 40;
                     height = SystemParameters.PrimaryScreenHeight - MiniCorner - 10//-50 
                         + (BigBorder.ActualWidth / 2 - 10);// - 40;
                 }
@@ -112,6 +125,46 @@ namespace Argus.Win
                 Canvas.SetLeft(this.BigBorder, left);
                 Canvas.SetTop(this.BigBorder, top);
             }
+        }
+        public void DragMove(Layouts Layout)
+        {
+            double left = Canvas.GetLeft(BigBorder);
+            double top = Canvas.GetTop(BigBorder);
+            double width = this.grid.ColumnDefinitions[0].Width.Value;
+            double height = this.grid.RowDefinitions[0].Height.Value;
+            switch (Layout)
+            {
+                case Layouts.LeftUp://为了平整右和下都-40
+                    left = SystemParameters.PrimaryScreenWidth - MiniCorner - 5;
+                    width = SystemParameters.PrimaryScreenWidth - MiniCorner + (BigBorder.ActualWidth / 2 - 10);
+                    top = SystemParameters.PrimaryScreenHeight - MiniCorner - 50;
+                    height = SystemParameters.PrimaryScreenHeight - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10);
+                    break;
+                case Layouts.LeftBottom:
+                    left = SystemParameters.PrimaryScreenWidth - MiniCorner - 5;
+                    width = SystemParameters.PrimaryScreenWidth - MiniCorner + (BigBorder.ActualWidth / 2 - 10);
+                    top = MiniCorner - (BigBorder.ActualWidth / 2 - 10);
+                    height = MiniCorner;
+                    break;
+                case Layouts.RightUp:
+                    left = MiniCorner - 5;
+                    width = MiniCorner + (BigBorder.ActualWidth / 2 - 10);
+                    top = SystemParameters.PrimaryScreenHeight - MiniCorner - 50;
+                    height = SystemParameters.PrimaryScreenHeight - MiniCorner - 50 + (BigBorder.ActualWidth / 2 - 10);
+                    break;
+                case Layouts.RightBotton:
+                    left = MiniCorner - 5;
+                    width = MiniCorner + (BigBorder.ActualWidth / 2 - 10);
+                    top = MiniCorner - (BigBorder.ActualWidth / 2 - 10);
+                    height = MiniCorner;
+                    break;
+                default:
+                    break;
+            }
+            this.grid.ColumnDefinitions[0].Width = new GridLength(width, GridUnitType.Pixel);
+            this.grid.RowDefinitions[0].Height = new GridLength(height, GridUnitType.Pixel);
+            Canvas.SetLeft(this.BigBorder, left);
+            Canvas.SetTop(this.BigBorder, top);
         }
     }
 }

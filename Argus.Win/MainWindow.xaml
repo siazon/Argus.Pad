@@ -38,10 +38,11 @@
                         </EventTrigger>
                     </Border.Triggers>-->
                 </Border>
-                <View:DetectionView x:Name="LeftUpFrame" ></View:DetectionView>
-                <View:DetectionView x:Name="RightUpFrame" Grid.Column="2"></View:DetectionView>
-                <View:DetectionView x:Name="LeftBottonFrame" Grid.Row="2"></View:DetectionView>
-                <View:DetectionView x:Name="RightBottonFrame"  Grid.Row="2"  Grid.Column="2"></View:DetectionView>
+                
+                <Grid x:Name="LeftUpFrame" ></Grid>
+                <Grid x:Name="RightUpFrame" Grid.Column="2"></Grid>
+                <Grid x:Name="LeftBottonFrame" Grid.Row="2"></Grid>
+                <Grid x:Name="RightBottonFrame"  Grid.Row="2"  Grid.Column="2"></Grid>
 
             </Grid>
             <Border x:Name="BigBorder"  Height="50" Width="50" CornerRadius="30" Background="Black"   Canvas.Left="354" Canvas.Top="237" MouseLeftButtonDown="BigBorder_MouseLeftButtonDown" MouseLeftButtonUp="BigBorder_MouseLeftButtonUp" MouseMove="BigBorder_MouseMove"/>

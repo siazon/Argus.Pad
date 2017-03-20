@@ -1,42 +1,43 @@
-﻿<local:BaseLayoutView x:Class="Argus.Win.View.DetectionView"
+﻿<UserControl 
+             xmlns:local="clr-namespace:Argus.Win.View"
+             x:Class="Argus.Win.View.DetectionView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Argus.Win.View"
              mc:Ignorable="d">
-   
-        <Grid x:Name="grid">
-            <Grid.Background>
-                <ImageBrush Stretch="Fill" ImageSource="/Argus.Win;component/Image/Background.png"/>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="65"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Border  HorizontalAlignment="Stretch" Height="40" CornerRadius="20"  Margin="10">
+
+    <Grid x:Name="grid">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Argus.Win;component/Image/Background.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border  HorizontalAlignment="Stretch" Height="40" CornerRadius="20"  Margin="10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#A9C2CA" Offset="0.9"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border BorderThickness="0" HorizontalAlignment="Left"  Height="37" VerticalAlignment="Center"  Grid.Row="0" Width="146">
                 <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="White" Offset="0"/>
-                        <GradientStop Color="#A9C2CA" Offset="0.9"/>
-                    </LinearGradientBrush>
+                    <ImageBrush ImageSource="/Argus.Win;component/Image/Icon/Bar_Logo_mini.png"  />
                 </Border.Background>
-                <Border BorderThickness="0" HorizontalAlignment="Left"  Height="37" VerticalAlignment="Center"  Grid.Row="0" Width="146">
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Argus.Win;component/Image/Icon/Bar_Logo_mini.png"  />
-                    </Border.Background>
 
-                </Border>
             </Border>
-            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                <StackPanel Grid.Row="1" VerticalAlignment="Center" Background="White" >
-                    <Image Width="268" Height="140" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Argus.Win;component/Image/Icon/Detection.png"  />
-                    <TextBlock FontSize="30" HorizontalAlignment="Center">检 测</TextBlock>
-                </StackPanel>
-
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" Background="White" >
+                <Image Width="268" Height="140" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Argus.Win;component/Image/Icon/Detection.png"  />
+                <TextBlock FontSize="30" HorizontalAlignment="Center">检 测</TextBlock>
             </StackPanel>
 
+        </StackPanel>
 
-        </Grid>
-   
-</local:BaseLayoutView>
+
+    </Grid>
+
+</UserControl>

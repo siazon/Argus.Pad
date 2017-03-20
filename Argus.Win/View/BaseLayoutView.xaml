@@ -5,17 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Argus.Win.View"
              mc:Ignorable="d" >
-    <Grid>
+    <Grid >
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="/Argus.Win;component/Image/Background.png"/>
         </Grid.Background>
-        <Frame x:Name="MainFram"></Frame>
+        <Grid x:Name="MainFram">
+            <local:DetectionView></local:DetectionView>
+        </Grid>
 
 
-        <Border Name="Cover"  Opacity="0.5" Background="Gray" >
+        <Border Name="Cover"  Opacity="0.5" Background="Gray" MouseLeftButtonDown="Border_MouseLeftButtonDown">
 
         </Border>
-        <Border Visibility="{Binding ElementName=Cover,Path=Visibility}"  Width="100" Height="100" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Border Visibility="{Binding ElementName=Cover,Path=Visibility}"  Width="100" Height="100" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
             <Border.Background>
                 <ImageBrush Stretch="Fill" ImageSource="/Argus.Win;component/Image/Icon/expand_3.png"/>
             </Border.Background>
